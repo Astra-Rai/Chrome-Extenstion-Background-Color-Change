@@ -1,12 +1,27 @@
+/*
+
+Extensions, themes, and applications are simply bundles 
+of resources, wrapped up with a manifest.json file that describes the package's contents.
+as this is named manifest.json
+*/
+
 {
-"version": "1.0",
-"manifest_version": 2,
-	"name": "Background-color Change Chrome Extension",	
+"version": "1.0", /*Version number of chrome extension*/
+"manifest_version": 2,/*
+Current Version
+Developers should currently specify 'manifest_version': 2:*/
+	"name": "Background-color Change Chrome Extension",	/*name of chrome extension*/
+/*content scripts" for chrome extensions. The content script is a 
+JavaScript file that runs in the context of a web page (and can be used to modify that page*/
 	"content_scripts": [
 		{
+/*matches is an array, <all_urls> (run extension on all websites)*/			
 		"matches": [
+/*Matches any URL that uses a permitted scheme. (*/			
 			"<all_urls>"
 		],		
+/*Link to JavaScript file, code that changes background of paragraph element to pink, #FF00FF*/
+
 		"js": ["content.js"]
 		}
 	]
